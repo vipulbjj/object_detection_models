@@ -1,0 +1,10 @@
+The results were good. There were some images better than one with focal loss. So this has benefit, focal loss also has benefit
+
+Average Precision Per-class:
+left_foot: 0.31990521035474717
+right_foot: 0.17825861531682563
+
+Average Precision Across All Classes:0.2490819128357864
+
+
+But precision is still not very good. not very happy with it

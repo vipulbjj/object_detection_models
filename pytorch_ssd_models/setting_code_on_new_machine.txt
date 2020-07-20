@@ -1,0 +1,6 @@
+setting up new machine
+directly use 
+gsutil cp gs://vipul-uplara/data_images.zip .
+after doing git clone and cd to data
+then unzip data_images.zip
+start with source /home/chan/.bashrc

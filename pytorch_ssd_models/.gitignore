@@ -1,0 +1,31 @@
+.DS_Store
+.idea
+log
+models
+*.zip
+
+# eval_results/
+not-needed/
+
+# Pytorch Models
+*.pth
+
+# images
+*.jpg
+*.png
+*.JPG
+*.jpeg
+*.JPEG
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*/__pycache__/
+*.py[cod]
+*$py.class
+*.*.pyc
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version

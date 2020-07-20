@@ -1,0 +1,27 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb1-ssd --pretrained_ssd ~/uplaraml/pytorch_ssd_models/models/mobilenet-v1-ssd-mp-0_675.pth --scheduler cosine --lr 0.0001 --t_max 200 --validation_epochs 5 --num_epochs 100
+
+----------------------------------------------------Training---------------------------------------------------------------
+
+
+Configuration - Pretrained Mobilenet V1 SSD
+Note that here base net is pretrained SSD
+
+----------------------------------------------------Evaluation---------------------------------------------------------------
+
+Average Precision Per-class:
+left_foot: 0.32790613584707784
+right_foot: 0.17146585471944323
+
+Average Precision Across All Classes:0.24968599528326052
+
+
+-----------------------------------------------------Comments--------------------------------------------------------------
+There are some improvements other than the previous weighted version as now I corrected for the ratio. WHile some images have improved, some have deteriorated
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+ 2020-05-05 23:12:00,762 - root - INFO - Epoch: 99, Step: 400, Average Loss: 1.5542, Average Regression Loss 0.6327, Average Classification Loss: 1.3960
+2020-05-05 23:12:18,736 - root - INFO - Epoch: 99, Validation Loss: 1.8411, Validation Regression Loss 0.4967, Validation Classification Loss: 1.3444
+

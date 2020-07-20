@@ -1,0 +1,32 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb1-ssd --pretrained_ssd ~/uplaraml/pytorch_ssd_models/models/mobilenet-v1-ssd-mp-0_675.pth --scheduler cosine --lr 0.0001 --t_max 200 --validation_epochs 5 --num_epochs 200
+
+----------------------------------------------------Training---------------------------------------------------------------
+
+
+Configuration - Pretrained Mobilenet V1 SSD
+Note that here base net is pretrained SSD
+
+----------------------------------------------------Evaluation---------------------------------------------------------------
+
+Average Precision Per-class:
+left_foot: 0.4581808527921769
+right_foot: 0.45262535238676754
+
+Average Precision Across All Classes:0.45540310258947225
+
+-----------------------------------------------------Comments--------------------------------------------------------------
+
+ The loss seems to saturate around this point. regression loss is reasonable. need to improve on classification loss. On seeing sample example, realize that it's predicting double boxes for every foot. -left and right. need to treat 3 classes differently. 2 are extremely similar and 1 is poles apart.
+ 
+ Several suggestions
+ - use focal loss
+ - restrict number of boxes to 2, max 1 left foot and max 1 right
+ - iou on resulting boxes should be less
+ - i think model is learning more from the the background labels because they are more in number. you can try to give less weightage to the background classification loss
+ - also currently ignoring foot that are partially inside
+ - I've ignored the points not visible. may need to include them to improve bounding box
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+Epoch: 62, Step: 400, Average Loss: 2.6345, Average Regression Loss 0.5313, Average Classification Loss: 2.1031
+ 

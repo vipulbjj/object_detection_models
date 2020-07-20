@@ -1,0 +1,20 @@
+sys:1: DtypeWarning: Columns (2,102,152) have mixed types. Specify dtype option on import or set low_memory=False.
+1it [00:00,  7.81it/s]Right Annotation Error: ck0ev8m8mt4qc084888juwfqh.png
+Right Annotation Error: ck0ey3muoef9608635cju3s5o+copy.png
+254it [00:00, 15.83it/s]Right Annotation Error: Screenshot_28.png
+Left Annotation Error: cjzsqo9521hq20944i9cahgzy+copy+2.png
+Right Annotation Error: cjzsqo9521hq20944i9cahgzy+copy+2.png
+384it [00:00, 22.49it/s]Left Annotation Error: cjzwyvjenghlr086321uhumei.png
+Right Annotation Error: cjzwyvjenghlr086321uhumei.png
+Left Annotation Error: cjzsqo9521hq20944i9cahgzy+copy.png
+Left Annotation Error: cjzvdbnt0tssc0863ft853ej5.png
+Right Annotation Error: cjzvdbnt0tssc0863ft853ej5.png
+764it [00:00, 63.41it/s]Left Annotation Error: ck0dfxyxwqmbo0944fwpbva92+copy+2.png
+891it [00:00, 88.68it/s]Right Annotation Error: ck0dfxyxwqmbo0944fwpbva92+copy.png
+Right Annotation Error: images+(22).jpeg
+Right Annotation Error: ck0c4m4jjiijo0a46as0lg52m+copy.png
+1020it [00:00, 123.03it/s]Right Annotation Error: cjzsqo9521hq20944i9cahgzy.png
+1151it [00:01, 168.93it/s]Left Annotation Error: ck0ey3muoef9608635cju3s5o.png
+
+
+like this a lot of annotational errors as l_1_v is False but point is given and l prob is True - errors like these are alot. for arond a thousand

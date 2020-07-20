@@ -1,0 +1,7 @@
+Average Precision Per-class:
+left_foot: 0.3918832260667915
+right_foot: 0.2654873861770413
+
+Average Precision Across All Classes:0.3286853061219164
+
+This is with RandomMirror in mb2

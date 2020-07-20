@@ -1,0 +1,1 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb2-ssd-lite --base_net models/mb2-imagenet-71_8.pth --scheduler cosine --lr 0.0001 --t_max 200 --validation_epochs 5 --num_epochs 100

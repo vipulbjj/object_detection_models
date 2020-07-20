@@ -1,0 +1,1 @@
+python run_ssd_example.py mb1-ssd ~/uplaraml/pytorch_ssd_models/models/mb1-ssd-Epoch-199-Loss-1.2806072735561516.pth ~/uplaraml/pytorch_ssd_models/models/foot-images-model-labels.txt ~/uplaraml/pytorch_ssd_models/data/test/image168yasmin-dangor-tuDtWCfsEy8-unsplash2.jpg

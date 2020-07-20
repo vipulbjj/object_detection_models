@@ -1,0 +1,34 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb1-ssd --pretrained_ssd ~/uplaraml/pytorch_ssd_models/models/mobilenet-v1-ssd-mp-0_675.pth --scheduler cosine --lr 0.0001 --t_max 200 --validation_epochs 5 --num_epochs 200
+
+----------------------------------------------------Training---------------------------------------------------------------
+
+
+Configuration - Pretrained Mobilenet V1 SSD
+Note that here base net is pretrained SSD
+
+----------------------------------------------------Evaluation---------------------------------------------------------------
+
+
+Average Precision Per-class:
+left_foot: 0.3224414519939274
+right_foot: 0.2283317290742561
+
+Average Precision Across All Classes:0.27538659053409176
+
+-----------------------------------------------------Comments--------------------------------------------------------------
+
+ Need to understand why loss has reduced
+ Precision has also reduced which is not a good sign
+ Confidence has reduced in predictions and now it's predicting less boxes
+ I think only loss has reduced numerically
+ don't think any change has happened. Predictions are exactly same when run example is done
+ I think data is the problem. it's too less that it's not learning
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+2020-05-02 04:51:07,922 - root - INFO - Epoch: 67, Step: 400, Average Loss: 1.4776, Average Regression Loss 0.5294, Average Classification Loss: 0.9482
+
+Epoch: 199, Step: 400, Average Loss: 1.4160, Average Regression Loss 0.4937, Average Classification Loss: 0.9223
+
+Epoch: 199, Validation Loss: 1.2806, Validation Regression Loss 0.4046, Validation Classification Loss: 0.8760
+ 

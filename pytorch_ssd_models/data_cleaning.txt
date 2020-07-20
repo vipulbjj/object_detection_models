@@ -1,0 +1,7 @@
+#Notes on error in data on manual analysis
+
+- #12384 has wrong image name in url. partially shifted to l_0_x causing that column to have a string instead of all float
+So, df_new=df[df.ImageID != "crop1002nhyui"]
+
+- rename #15265 to crop810mhg.jpg removing comma while downloading too from crop810,mhg.jpg. it's wrongly named in the downloaded files.
+mv test/crop810,mhg.jpg test/crop810mhg.jpg

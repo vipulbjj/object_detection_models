@@ -1,0 +1,80 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb2-ssd-lite --pretrained_ssd ~/uplaraml/pytorch_ssd_models/models/mb2-ssd-lite-mp-0_686.pth --scheduler cosine --lr 0.01 --t_max 200 --validation_epochs 5 --num_epochs 50
+
+-------------------------------------------------------------------------------------------------------------------
+
+Notes - Validation loss comes out much greater than training loss.
+Configuration - Pretrained Mobilenet V2 SSD Lite
+Note that here base net is pretrained SSD
+Note that this time training was done for 50 epochs unlike 20 epochs done for previous exps
+
+-------------------------------------------------------------------------------------------------------------------
+bash train.sh 
+2020-04-25 00:03:20,263 - root - INFO - Use Cuda.
+2020-04-25 00:03:20,263 - root - INFO - Namespace(balance_data=False, base_net=None, base_net_lr=None, batch_size=32, checkpoint_folder='models/', dataset_type='foot_images', datasets=['/home/vipul/uplaraml/pytorc
+h_ssd_models/data/'], debug_steps=100, extra_layers_lr=None, freeze_base_net=False, freeze_net=False, gamma=0.1, lr=0.01, mb2_width_mult=1.0, milestones='80,100', momentum=0.9, net='mb2-ssd-lite', num_epochs=50, n
+um_workers=4, pretrained_ssd='/home/vipul/uplaraml/pytorch_ssd_models/models/mb2-ssd-lite-mp-0_686.pth', resume=None, scheduler='cosine', t_max=200.0, use_cuda=True, validation_dataset='/home/vipul/uplaraml/pytorc
+h_ssd_models/data/', validation_epochs=5, weight_decay=0.0005)
+2020-04-25 00:03:20,265 - root - INFO - Prepare training datasets.
+2020-04-25 00:03:31,266 - root - INFO - Dataset Summary:Number of Images: 13613
+Minimum Number of Images for a Class: -1
+Label Distribution:
+        left_foot: 9662
+        right_foot: 9070
+2020-04-25 00:03:31,279 - root - INFO - Stored labels into file models/foot-images-model-labels.txt.
+2020-04-25 00:03:31,279 - root - INFO - Train dataset size: 13613
+2020-04-25 00:03:31,280 - root - INFO - Prepare Validation datasets.
+2020-04-25 00:03:34,010 - root - INFO - Dataset Summary:Number of Images: 3405
+Minimum Number of Images for a Class: -1
+Label Distribution:
+        left_foot: 3206
+        right_foot: 2252
+2020-04-25 00:03:34,013 - root - INFO - validation dataset size: 3405
+2020-04-25 00:03:34,013 - root - INFO - Build network.
+2020-04-25 00:03:34,083 - root - INFO - Init from pretrained ssd /home/vipul/uplaraml/pytorch_ssd_models/models/mb2-ssd-lite-mp-0_686.pth
+2020-04-25 00:03:34,120 - root - INFO - Took 0.04 seconds to load the model.
+2020-04-25 00:03:35,874 - root - INFO - Learning rate: 0.01, Base net learning rate: 0.01, Extra Layers learning rate: 0.01.
+2020-04-25 00:03:35,875 - root - INFO - Uses CosineAnnealingLR scheduler.
+2020-04-25 00:03:35,875 - root - INFO - Start training from epoch 0.
+/home/chan/anaconda3/lib/python3.7/site-packages/torch/optim/lr_scheduler.py:122: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in 
+the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/
+stable/optim.html#how-to-adjust-learning-rate
+  "https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate", UserWarning)
+/home/chan/anaconda3/lib/python3.7/site-packages/torch/nn/_reduction.py:43: UserWarning: size_average and reduce args will be deprecated, please use reduction='sum' instead.
+  warnings.warn(warning.format(ret))
+2020-04-25 00:04:18,866 - root - INFO - Epoch: 0, Step: 100, Average Loss: 5.2435, Average Regression Loss 1.7935, Average Classification Loss: 3.4500
+2020-04-25 00:04:57,464 - root - INFO - Epoch: 0, Step: 200, Average Loss: 3.9034, Average Regression Loss 1.1758, Average Classification Loss: 2.7276
+2020-04-25 00:05:36,149 - root - INFO - Epoch: 0, Step: 300, Average Loss: 3.7756, Average Regression Loss 1.0824, Average Classification Loss: 2.6932
+2020-04-25 00:06:14,930 - root - INFO - Epoch: 0, Step: 400, Average Loss: 3.6631, Average Regression Loss 1.0212, Average Classification Loss: 2.6419
+2020-04-25 00:06:39,006 - root - INFO - Epoch: 0, Validation Loss: 10.0720, Validation Regression Loss 7.4445, Validation Classification Loss: 2.6275
+2020-04-25 00:06:39,039 - root - INFO - Saved model models/mb2-ssd-lite-Epoch-0-Loss-10.072025976448415.pth
+2020-04-25 00:07:19,458 - root - INFO - Epoch: 1, Step: 100, Average Loss: 3.6461, Average Regression Loss 0.9811, Average Classification Loss: 2.6650
+2020-04-25 00:07:58,242 - root - INFO - Epoch: 1, Step: 200, Average Loss: 3.5091, Average Regression Loss 0.9434, Average Classification Loss: 2.5657
+2020-04-25 00:08:37,046 - root - INFO - Epoch: 1, Step: 300, Average Loss: 3.4759, Average Regression Loss 0.9026, Average Classification Loss: 2.5733
+2020-04-25 00:09:15,814 - root - INFO - Epoch: 1, Step: 400, Average Loss: 3.4722, Average Regression Loss 0.8883, Average Classification Loss: 2.5840
+2020-04-25 00:10:05,749 - root - INFO - Epoch: 2, Step: 100, Average Loss: 3.4569, Average Regression Loss 0.8789, Average Classification Loss: 2.5780
+
+
+
+
+
+2020-04-25 02:14:06,533 - root - INFO - Epoch: 45, Validation Loss: 8.5305, Validation Regression Loss 5.7523, Validation Classification Loss: 2.7782
+2020-04-25 02:14:06,570 - root - INFO - Saved model models/mb2-ssd-lite-Epoch-45-Loss-8.530518313434637.pth
+2020-04-25 02:14:47,010 - root - INFO - Epoch: 46, Step: 100, Average Loss: 2.9781, Average Regression Loss 0.6453, Average Classification Loss: 2.3328
+2020-04-25 02:15:25,795 - root - INFO - Epoch: 46, Step: 200, Average Loss: 2.9125, Average Regression Loss 0.6285, Average Classification Loss: 2.2840
+2020-04-25 02:16:04,611 - root - INFO - Epoch: 46, Step: 300, Average Loss: 2.9162, Average Regression Loss 0.6305, Average Classification Loss: 2.2857
+2020-04-25 02:16:43,477 - root - INFO - Epoch: 46, Step: 400, Average Loss: 2.9728, Average Regression Loss 0.6690, Average Classification Loss: 2.3038
+2020-04-25 02:17:33,243 - root - INFO - Epoch: 47, Step: 100, Average Loss: 2.9956, Average Regression Loss 0.6585, Average Classification Loss: 2.3371
+2020-04-25 02:18:12,104 - root - INFO - Epoch: 47, Step: 200, Average Loss: 2.9166, Average Regression Loss 0.6285, Average Classification Loss: 2.2881
+2020-04-25 02:18:50,935 - root - INFO - Epoch: 47, Step: 300, Average Loss: 2.9141, Average Regression Loss 0.6283, Average Classification Loss: 2.2858
+2020-04-25 02:19:29,757 - root - INFO - Epoch: 47, Step: 400, Average Loss: 2.9097, Average Regression Loss 0.6349, Average Classification Loss: 2.2748
+2020-04-25 02:20:19,736 - root - INFO - Epoch: 48, Step: 100, Average Loss: 2.9557, Average Regression Loss 0.6491, Average Classification Loss: 2.3065
+2020-04-25 02:20:58,524 - root - INFO - Epoch: 48, Step: 200, Average Loss: 2.9031, Average Regression Loss 0.6317, Average Classification Loss: 2.2714
+2020-04-25 02:21:37,350 - root - INFO - Epoch: 48, Step: 300, Average Loss: 2.9015, Average Regression Loss 0.6216, Average Classification Loss: 2.2799
+2020-04-25 02:22:16,240 - root - INFO - Epoch: 48, Step: 400, Average Loss: 2.8921, Average Regression Loss 0.6307, Average Classification Loss: 2.2614
+2020-04-25 02:23:06,065 - root - INFO - Epoch: 49, Step: 100, Average Loss: 2.9093, Average Regression Loss 0.6236, Average Classification Loss: 2.2857
+2020-04-25 02:23:44,884 - root - INFO - Epoch: 49, Step: 200, Average Loss: 2.9179, Average Regression Loss 0.6361, Average Classification Loss: 2.2819
+2020-04-25 02:24:23,709 - root - INFO - Epoch: 49, Step: 300, Average Loss: 2.9275, Average Regression Loss 0.6373, Average Classification Loss: 2.2902
+2020-04-25 02:25:02,587 - root - INFO - Epoch: 49, Step: 400, Average Loss: 2.8854, Average Regression Loss 0.6097, Average Classification Loss: 2.2757
+2020-04-25 02:25:24,896 - root - INFO - Epoch: 49, Validation Loss: 8.3262, Validation Regression Loss 5.7822, Validation Classification Loss: 2.5441
+2020-04-25 02:25:24,929 - root - INFO - Saved model models/mb2-ssd-lite-Epoch-49-Loss-8.326220066747933.pth
+(base) vipul@vipul-tf-gpu:~/uplaraml/pytorch_ssd_models$ 

@@ -1,0 +1,27 @@
+python train_ssd.py --dataset_type foot_images --datasets ~/uplaraml/pytorch_ssd_models/data/ --validation_dataset ~/uplaraml/pytorch_ssd_models/data/ --net mb1-ssd --pretrained_ssd ~/uplaraml/pytorch_ssd_models/models/mobilenet-v1-ssd-mp-0_675.pth --scheduler cosine --lr 0.0001 --t_max 200 --validation_epochs 5 --num_epochs 100
+
+----------------------------------------------------Training---------------------------------------------------------------
+
+
+Configuration - Pretrained Mobilenet V1 SSD
+Note that here base net is pretrained SSD
+
+----------------------------------------------------Evaluation---------------------------------------------------------------
+
+
+Average Precision Per-class:
+left_foot: 0.012987012987012986
+right_foot: 0.0005984440454817474
+
+Average Precision Across All Classes:0.0067927285162473665
+
+
+-----------------------------------------------------Comments--------------------------------------------------------------
+
+Results worsened a lot even for regression after doing this. I don't know why regression loss is less then.
+I understood. Actually the ratio was 1/6 and I was taking 1/100
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+
+ 

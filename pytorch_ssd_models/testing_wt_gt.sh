@@ -1,0 +1,1 @@
+python testing_wt_gt.py mb2-ssd-lite ~/uplaraml/pytorch_ssd_models/models/mb2-ssd-lite-weighted-normal-loss-Epoch-99-Loss-1.5608666662899953.pth ~/uplaraml/pytorch_ssd_models/models/foot-images-model-labels.txt ~/uplaraml/pytorch_ssd_models/data/test_100/
